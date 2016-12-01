@@ -5,7 +5,7 @@ Currently working on:
 Fixing problems with classes in the Math Libraries Vectors
 
 Stopping point was:
-Getting the classes to where they were before break/last time I worked on these.
+Getting the normalise functions to wokr properly (calling the result of the magnitude function)
 */
 
 /*
@@ -18,6 +18,7 @@ m.setRotateX(f) m.setRotateY(f) m.setRotateZ(f)		mat4 + mat3
 /*
 NOTE:
 No templating with the matracies.
+Cross Product for Matracies.
 */
 
 /*
@@ -54,14 +55,22 @@ public:
 	{
 		return Vector2(x * T.x, y * T.y);
 	}
-	
-	// Need to use magnitude for normalising!!!
-	float Magnitude() // Function gives the squareroot of the sum of varible of type int x squared and type int y squared
+
+	// Magnitude is needed for other functions in this class to work properly.
+	float Magnitude() // Function gives the squareroot of the sum of varible of type int x squared and type int y squared.
 	{
-		return sqrt ((x * x) + (y * y));
+		float mag = sqrt ((x * x) + (y * y));
+		return mag;
 	}
 
-	// v.noramlise()
+	// Needs to use mag to Normalise the Vector
+	Vector2 Normalise()
+	{
+		/*
+		x = (x / sqrt((x * x) + (y * y)));
+		y = (y / sqrt((x * x) + (y * y)));
+		*/
+	}
 
 	
 };
@@ -91,9 +100,18 @@ public:
 		return Vector3(x * T.x, y * T.y, z * T.z);
 	}
 
-	float Magnitude()
+	// Magnitude is needed for other functions in this class to work properly.
+	float Magnitude() // Function gives the squareroot of the sum of varible of type int x squared type int y squared and type int z squared.
 	{
 		return sqrt((x * x) + (y * y) + (z * z));
+	}
+	Vector3 Normalise()
+	{
+		/*
+		x = (x / sqrt((x * x) + (y * y) + (z * z)));
+		y = (y / sqrt((x * x) + (y * y) + (z * z)));
+		z = (z / sqrt((x * x) + (y * y) + (z * z)));
+		*/
 	}
 
 };
@@ -123,9 +141,19 @@ public:
 		return Vector4(x * T.x, y * T.y, z * T.z, w * T.w);
 	}
 
-	float Magnitude()
+	// Magnitude is needed for other functions in this class to work properly.
+	float Magnitude() // Function gives the squareroot of the sum of varible of type int x squared type int y squared type int z squared and int w squared.
 	{
 		return sqrt((x * x) + (y * y) + (z * z) + (w + w));
 	}
 
+	Vector4 Normalise()
+	{
+		/*
+		x = (x / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
+		y = (y / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
+		z = (z / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
+		w = (w / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
+		*/
+	}
 };

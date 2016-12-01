@@ -1,11 +1,12 @@
 #pragma once
+#include <iostream>
 
 /*
 Currently working on:
 Fixing problems with classes in the Math Libraries Vectors
 
 Stopping point was:
-Getting the normalise functions to wokr properly (calling the result of the magnitude function)
+Creating the functions for the Vector classes
 */
 
 /*
@@ -18,7 +19,7 @@ m.setRotateX(f) m.setRotateY(f) m.setRotateZ(f)		mat4 + mat3
 /*
 NOTE:
 No templating with the matracies.
-Cross Product for Matracies.
+Cross Product for Matracies, not Vectors.
 */
 
 /*
@@ -66,12 +67,13 @@ public:
 	// Needs to use mag to Normalise the Vector
 	Vector2 Normalise()
 	{
-		/*
-		x = (x / sqrt((x * x) + (y * y)));
-		y = (y / sqrt((x * x) + (y * y)));
-		*/
+		x = (x / Magnitude());
+		y = (y / Magnitude());
 	}
 
+
+
+	
 	
 };
 
@@ -107,11 +109,9 @@ public:
 	}
 	Vector3 Normalise()
 	{
-		/*
 		x = (x / sqrt((x * x) + (y * y) + (z * z)));
 		y = (y / sqrt((x * x) + (y * y) + (z * z)));
 		z = (z / sqrt((x * x) + (y * y) + (z * z)));
-		*/
 	}
 
 };
@@ -149,11 +149,9 @@ public:
 
 	Vector4 Normalise()
 	{
-		/*
 		x = (x / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
 		y = (y / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
 		z = (z / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
 		w = (w / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
-		*/
 	}
 };

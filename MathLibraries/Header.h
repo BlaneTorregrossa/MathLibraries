@@ -109,9 +109,9 @@ public:
 	}
 	Vector3 Normalise()
 	{
-		x = (x / sqrt((x * x) + (y * y) + (z * z)));
-		y = (y / sqrt((x * x) + (y * y) + (z * z)));
-		z = (z / sqrt((x * x) + (y * y) + (z * z)));
+		x = (x / Magnitude());
+		y = (y / Magnitude());
+		z = (z / Magnitude());
 	}
 
 };
@@ -149,9 +149,50 @@ public:
 
 	Vector4 Normalise()
 	{
-		x = (x / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
-		y = (y / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
-		z = (z / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
-		w = (w / sqrt((x * x) + (y * y) + (z * z) + (w + w)));
+		x = (x / Magnitude());
+		y = (y / Magnitude());
+		z = (z / Magnitude());
+		w = (w / Magnitude());
 	}
+};
+
+
+
+class Matrix2
+{
+private:
+	float x1, x2, x3, x4;
+
+public:
+	Matrix2() {};
+
+
+};
+
+
+
+class Matrix3
+{
+private:
+	float x1, x2, x3, x4, x5, x6, x7, x8, x9;
+
+
+public:
+	Matrix3() {};
+
+
+};
+
+
+
+class Matrix4
+{
+private:
+	float x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16;
+
+
+public:
+	Matrix4() {};
+
+
 };

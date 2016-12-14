@@ -8,11 +8,6 @@ f = v.dot(v)	v = v.cross(v)	f = v.magnitude()  v.noramlise()
 m.setRotateX(f) m.setRotateY(f) m.setRotateZ(f)		mat4 + mat3
 */
 
-/*
-NOTE:
-No templating with the matracies.
-Cross Product for Matracies, not Vectors.
-*/
 
 /*
 Classes of Math Library (No additions to this list)
@@ -24,6 +19,7 @@ Matrix3
 Matrix4
 */
  
+
 class Vector2
 {
 
@@ -34,40 +30,23 @@ public:
 	Vector2() {};
 	Vector2(float xx, float yy) {}
 
-	Vector2 operator +(const Vector2 &T)
-	{
-		return Vector2(x + T.x, y + T.y);
-	}
+	Vector2 operator +(const Vector2 &T);
+	
+	Vector2 operator -(const Vector2 &T);
 
-	Vector2 operator -(const Vector2 &T)
-	{
-		return Vector2(x - T.x, y - T.y);
-	}
+	Vector2 operator += (const Vector2 &T);
 
-	Vector2 operator *(const Vector2 &T)
-	{
-		return Vector2(x * T.x, y * T.y);
-	}
+	Vector2 operator -= (const Vector2 &T);
 
+	Vector2 operator *(const Vector2 &T);
+	
 	// Magnitude is needed for other functions in this class to work properly.
-	float Magnitude() // Function gives the squareroot of the sum of varible of type int x squared and type int y squared.
-	{
-		float mag = sqrt ((x * x) + (y * y));
-		return mag;
-	}
-
+	float Magnitude(); // Function gives the squareroot of the sum of varible of type int x squared and type int y squared.
+	
 	// Needs to use mag to Normalise the Vector
-	Vector2 Normalise()
-	{
-		x = (x / Magnitude());
-		y = (y / Magnitude());
-	}
+	Vector2 Normalise();
 
-	float DotProd(Vector2)
-	{
-		float dot = (x * x) + (y * y);
-		return dot;
-	}
+	float DotProd(Vector2);
 
 };
 
@@ -81,40 +60,23 @@ public:
 	Vector3() {};
 	Vector3(float xx, float yy, float zz) {}
 
-	Vector3 operator +(const Vector3 &T)
-	{
-		return Vector3(x + T.x, y + T.y, z + T.z);
-	}
+	Vector3 operator +(const Vector3 &T);
 
-	Vector3 operator -(const Vector3 &T)
-	{
-		return Vector3(x - T.x, y - T.y, z - T.z);
-	}
+	Vector3 operator -(const Vector3 &T);
 
-	Vector3 operator *(const Vector3 &T)
-	{
-		return Vector3(x * T.x, y * T.y, z * T.z);
-	}
+	Vector3 operator += (const Vector3 &T);
 
+	Vector3 operator -= (const Vector3 &T);
+
+	Vector3 operator *(const Vector3 &T);
+	
 	// Magnitude is needed for other functions in this class to work properly.
-	float Magnitude() // Function gives the squareroot of the sum of varible of type int x squared type int y squared and type int z squared.
-	{
-		return sqrt((x * x) + (y * y) + (z * z));
-	}
-	Vector3 Normalise()
-	{
-		x = (x / Magnitude());
-		y = (y / Magnitude());
-		z = (z / Magnitude());
-	}
-
-	float DotProd(Vector3)
-	{
-		float dot = (x * x) + (y * y) + (z * z);
-		return dot;
-	}
-
-
+	float Magnitude(); // Function gives the squareroot of the sum of varible of type int x squared type int y squared and type int z squared.
+	
+	Vector3 Normalise();
+	
+	float DotProd(Vector3);
+	
 };
 
 class Vector4
@@ -127,42 +89,23 @@ public:
 	Vector4() {};
 	Vector4(float xx, float yy, float zz, float ww) {}
 
-	Vector4 operator +(const Vector4 &T)
-	{
-		return Vector4(x + T.x, y + T.y, z + T.z, w + T.w);
-	}
+	Vector4 operator +(const Vector4 &T);
 
-	Vector4 operator -(const Vector4 &T)
-	{
-		return Vector4(x - T.x, y - T.y, z - T.z, w - T.w);
-	}
+	Vector4 operator -(const Vector4 &T);
 
-	Vector4 operator *(const Vector4 &T)
-	{
-		return Vector4(x * T.x, y * T.y, z * T.z, w * T.w);
-	}
+	Vector4 operator +=(const Vector4 &T);
+
+	Vector4 operator -=(const Vector4 &T);
+
+	Vector4 operator *(const Vector4 &T);
 
 	// Magnitude is needed for other functions in this class to work properly.
-	float Magnitude() // Function gives the squareroot of the sum of varible of type int x squared type int y squared type int z squared and int w squared.
-	{
-		return sqrt((x * x) + (y * y) + (z * z) + (w + w));
-	}
+	float Magnitude(); // Function gives the squareroot of the sum of varible of type int x squared type int y squared type int z squared and int w squared.
 
-	Vector4 Normalise()
-	{
-		x = (x / Magnitude());
-		y = (y / Magnitude());
-		z = (z / Magnitude());
-		w = (w / Magnitude());
-	}
-
-
-	float DotProd(Vector4)
-	{
-		float dot = (x * x) + (y * y) + (z * z) + (w * W);
-		return dot;
-	}
-
+	Vector4 Normalise();
+	 
+	float DotProd(Vector4);
+	
 };
 
 
@@ -176,10 +119,7 @@ public:
 	Matrix2() {};
 	Matrix2(float xx1, float xx2, float xx3, float xx4) {}
 
-	Matrix2 operator +(const Matrix2 &T)
-	{
-		return Matrix2(x1 + T.x1, x2 + T.x2, x3 + T.x3, x4 + T.x4);
-	}
+	Matrix2 operator +(const Matrix2 &T);
 
 	Matrix2 operator -(const Matrix2 &T)
 	{

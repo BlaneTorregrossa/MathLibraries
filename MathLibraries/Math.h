@@ -34,6 +34,11 @@ public:
 
 	Vector2 operator -(const Vector2 &T);
 
+	Vector2 operator +=(const Vector2 &T);
+
+	Vector2 operator -=(const Vector2 &T);
+
+
 	Vector2 operator *(const float &T);
 
 	// Magnitude is needed for other functions in this class to work properly.
@@ -59,6 +64,10 @@ public:
 	Vector3 operator +(const Vector3 &T);
 
 	Vector3 operator -(const Vector3 &T);
+
+	Vector3 operator +=(const Vector3 &T);
+
+	Vector3 operator -=(const Vector3 &T);
 
 	Vector3 operator *(const float &T);
 
@@ -86,6 +95,10 @@ public:
 
 	Vector4 operator -(const Vector4 &T);
 
+	Vector4 operator +=(const Vector4 &T);
+
+	Vector4 operator -=(const Vector4 &T);
+
 	Vector4 operator *(const float &T);
 
 
@@ -107,7 +120,8 @@ private:
 
 public:
 	Matrix2() {};
-	Matrix2(float xx1, float xx2, float xx3, float xx4) {}
+	Matrix2(float xx1, float xx2,
+			float xx3, float xx4) {}
 
 
 	Matrix2 operator *(const Matrix2 &T);
@@ -127,7 +141,9 @@ private:
 
 public:
 	Matrix3() {};
-	Matrix3(float xx1, float xx2, float xx3, float xx4, float xx5, float xx6, float xx7, float xx8, float xx9) {}
+	Matrix3(float xx1, float xx2, float xx3,
+			float xx4, float xx5, float xx6,
+			float xx7, float xx8, float xx9) {}
 
 	
 	Matrix3 operator *(const Matrix3 &T);
@@ -147,7 +163,10 @@ private:
 
 public:
 	Matrix4() {};
-	Matrix4(float xx1, float xx2, float xx3, float xx4, float xx5, float xx6, float xx7, float xx8, float xx9, float xx10, float xx11, float xx12, float xx13, float xx14, float xx15, float xx16) {}
+	Matrix4(float xx1, float xx2, float xx3, float xx4,
+			float xx5, float xx6, float xx7, float xx8,
+			float xx9, float xx10, float xx11, float xx12,
+			float xx13, float xx14, float xx15, float xx16) {}
 
 	
 	Matrix4 operator *(const Matrix4 &T);

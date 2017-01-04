@@ -38,8 +38,9 @@ public:
 
 	Vector2 operator -=(const Vector2 &T);
 
-
 	Vector2 operator *(const float &T);
+
+	
 
 	// Magnitude is needed for other functions in this class to work properly.
 	float Magnitude(); // Function gives the squareroot of the sum of varible of type int x squared and type int y squared.
@@ -71,6 +72,7 @@ public:
 
 	Vector3 operator *(const float &T);
 
+	
 
 	// Magnitude is needed for other functions in this class to work properly.
 	float Magnitude(); // Function gives the squareroot of the sum of varible of type int x squared type int y squared and type int z squared.
@@ -78,6 +80,8 @@ public:
 	Vector3 Normalise();
 
 	float DotProd(Vector3);
+
+	Vector3 CrossProd();
 
 };
 
@@ -101,6 +105,7 @@ public:
 
 	Vector4 operator *(const float &T);
 
+	
 
 	// Magnitude is needed for other functions in this class to work properly.
 	float Magnitude(); // Function gives the squareroot of the sum of varible of type int x squared type int y squared type int z squared and int w squared.
@@ -123,12 +128,11 @@ public:
 	Matrix2(float xx1, float xx2,
 			float xx3, float xx4) {}
 
+	Matrix2 operator *(const Matrix2 &t);
 
-	Matrix2 operator *(const Matrix2 &T);
-	
+	Vector2 operator *(const Vector2 &t);
 
-	//float CrossProd(Matrix2);
-
+	float tempMatrix2[4];
 };
 
 
@@ -146,11 +150,17 @@ public:
 			float xx7, float xx8, float xx9) {}
 
 	
-	Matrix3 operator *(const Matrix3 &T);
+	Matrix3 operator *(const Matrix3 &t);
 
+	Vector3 operator *(const Vector3 &t);
 
-	//float CrossProd(Matrix3);
+	Matrix3 setRotateX(float a);
 
+	Matrix3 setRotateY(float a);
+
+	Matrix3 setRotateZ(float a);
+
+	float tempMatrix3[9];
 };
 
 
@@ -169,9 +179,20 @@ public:
 			float xx13, float xx14, float xx15, float xx16) {}
 
 	
-	Matrix4 operator *(const Matrix4 &T);
 	
 
-	//float CrossProd(Matrix4);
+
+	Matrix4 setRotateX(float a);
+
+	Matrix4 setRotatey(float a);
+
+	Matrix4 setRotatez(float a);
+
+
+	float tempMatrix4[16];
+
+	Matrix4 operator*(const Matrix4 & T);
+
+	Vector4 operator *(const Vector4 &t);
 
 };
